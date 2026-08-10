@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patrik stavebnictví - Profesionální stavební práce, rekonstrukce a zednické práce.">
+    <title>Patrik stavebnictví | Spolehlivé stavební práce</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Vlastní CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hlavička s navigací -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#uvod">Patrik <span>Stavebnictví</span></a>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#sluzby">Služby</a></li>
+                    <li><a href="#o-nas">O firmě</a></li>
+                    <li><a href="fotogalerie.html">Galerie</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-quick">
+                <a href="tel:+420123456789" class="phone-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +420 123 456 789
+                </a>
+            </div>
+            
+            <!-- Hamburger menu pro mobily -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Úvodní sekce (Hero banner) -->
+    <section id="uvod" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Kvalitní <span>stavební</span> práce bez kompromisů</h1>
+            <p class="hero-subtitle">Vaše vize. Naše stroje a praxe. Profesionální stavby a rekonstrukce po celé ČR.</p>
+            <div class="hero-actions">
+                <a href="#kontakt" class="btn btn-primary">Kontaktujte nás</a>
+                <a href="#sluzby" class="btn btn-secondary">Naše služby</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rychlý přehled služeb (4 sloupce) -->
+    <section id="sluzby" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Naše služby</h2>
+                <p>Nabízíme komplexní řešení pro vaše stavby s důrazem na precizní detail a dlouhou životnost.</p>
+            </div>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22L22 2M2 2l20 20M12 2v20M2 12h20"></path></svg>
+                    </div>
+                    <h3>Pokládka dlažby</h3>
+                    <p>Zámková, betonová a velkoformátová dlažba. Kompletní realizace chodníků, vjezdů a teras.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10Z"></path><path d="m2 10 10-6 10 6"></path></svg>
+                    </div>
+                    <h3>Stavba plotů</h3>
+                    <p>Betonové panelové ploty, ploty ze ztraceného bednění, štípaných tvárnic a cihlové zídky.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>
+                    </div>
+                    <h3>Zemní práce</h3>
+                    <p>Výkopy základů, terénní úpravy a příprava podloží pod dlažby i ploty.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3>Ztracené bednění</h3>
+                    <p>Opěrné zdi, základy a venkovní schodiště s důrazem na pevnost a stabilitu.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- O firmě -->
+    <section id="o-nas" class="section">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2>O firmě <span>Patrik stavebnictví</span></h2>
+                <p>Jsme stabilní stavební firma. Zakládáme si na kvalitně odvedené práci a spokojenosti našich zákazníků. Každý projekt je pro nás prioritou, ať už se jedná o drobnou zednickou práci nebo stavbu celého domu.</p>
+                <ul class="about-features">
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <strong>Vlastní strojový park</strong>
+                            <span>Díky vlastním bagrům a technice jsme nezávislí a efektivní.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <strong>Dlouholetá praxe</strong>
+                            <span>Máme za sebou desítky úspěšných realizací.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <strong>Férové jednání</strong>
+                            <span>Průhledné rozpočty a vždy dodržujeme dohodnuté termíny.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="Patrik%20stranka%20fotky/Stavba%20betonov%C3%A9ho%20panelov%C3%A9ho%20plotu%20s%20pomocn%C3%ADky%20na%20staveni%C5%A1ti.jpg" alt="Naše práce v terénu">
+                <div class="experience-badge">
+                    <span class="number">10+</span>
+                    <span class="text">Let zkušeností</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fotogalerie (Ukázka) -->
+    <section id="galerie" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ukázky našich realizací</h2>
+                <p>Nahlédněte do fotogalerie naší práce a přesvědčte se o našich výsledcích.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Patrik%20stranka%20fotky/Dokon%C4%8Den%C3%BD%20betonov%C3%BD%20panelov%C3%BD%20plot%20s%20imitac%C3%AD%20%C5%A1t%C3%ADpan%C3%A9ho%20kamene.jpg" alt="Betonový panelový plot">
+                    <div class="gallery-overlay"><span>Betonové ploty</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Patrik%20stranka%20fotky/Dlouh%C3%A1%20dl%C3%A1%C5%BEd%C4%9Bn%C3%A1%20p%C5%99%C3%ADjezdov%C3%A1%20cesta%20k%20rodinn%C3%A9mu%20domu.jpg" alt="Zámková dlažba">
+                    <div class="gallery-overlay"><span>Zámková dlažba</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Patrik%20stranka%20fotky/V%C3%BDstavba%20venkovn%C3%ADho%20schodi%C5%A1t%C4%9B%20ze%20z%C3%A1mkov%C3%A9%20dla%C5%BEby%20a%20obrubn%C3%ADk%C5%AF.jpg" alt="Venkovní schodiště">
+                    <div class="gallery-overlay"><span>Venkovní schodiště</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Patrik%20stranka%20fotky/Zd%C4%9Bn%C3%A1%20cihlov%C3%A1%20z%C3%ADdka%20p%C5%99ed%20p%C5%99edzahr%C3%A1dkou%20m%C4%9Bstsk%C3%A9ho%20domu.jpg" alt="Cihlová zídka">
+                    <div class="gallery-overlay"><span>Cihlové zídky a opěrné zdi</span></div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="fotogalerie.html" class="btn btn-primary">Zobrazit celou fotogalerii</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patička a Kontakt (jen informace, bez formuláře) -->
+    <footer id="kontakt" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col brand-col">
+                    <h2>Patrik <span>Stavebnictví</span></h2>
+                    <p>Váš spolehlivý partner pro stavební projekty. Od prvního výkopu až po předání klíčů.</p>
+                </div>
+                
+                <div class="footer-col contact-col">
+                    <h3>Kontaktujte nás</h3>
+                    <div class="contact-methods">
+                        <a href="tel:+420123456789" class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span>
+                                <strong>Zavolejte nám</strong><br>
+                                +420 123 456 789
+                            </span>
+                        </a>
+                        <a href="mailto:info@patrik-stavebnictvi.cz" class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span>
+                                <strong>Napište e-mail</strong><br>
+                                info@patrik-stavebnictvi.cz
+                            </span>
+                        </a>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>
+                                <strong>Oblast působení</strong><br>
+                                Celá Česká republika
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col info-col">
+                    <h3>Fakturační údaje</h3>
+                    <ul class="company-details">
+                        <li><strong>Patrik Stavebnictví s.r.o.</strong></li>
+                        <li>Stavební 123, 100 00 Praha</li>
+                        <li>IČO: 12345678</li>
+                        <li>DIČ: CZ12345678</li>
+                        <br>
+                        <li><strong>Otevírací doba:</strong></li>
+                        <li>Po-Pá: 7:00 - 17:00</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Patrik Stavebnictví. Všechna práva vyhrazena.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interaktivita: JavaScript -->
+    <script>
+        // Mobilní menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const nav = document.querySelector('.nav');
+        const header = document.querySelector('.header');
+
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                btn.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Efekt ztmavení hlavičky po scrollování dolů
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Filtrace galerie
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Odstranění třídy active ze všech tlačítek
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
