@@ -418,7 +418,7 @@ img {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(3, 7, 18, 0.94) 0%, rgba(3, 7, 18, 0.65) 50%, rgba(3, 7, 18, 0.85) 100%),
-                url('Dlouh%C3%A1%20dl%C3%A1%C5%BEd%C4%9Bn%C3%A1%20p%C5%99%C3%ADjezdov%C3%A1%20cesta%20k%20rodinn%C3%A9mu%20domu.jpg') center/cover no-repeat;
+                url('hero-bg.jpg') center/cover no-repeat;
     z-index: -2;
     transform: scale(1.03);
     animation: zoomBg 25s infinite alternate ease-in-out;
