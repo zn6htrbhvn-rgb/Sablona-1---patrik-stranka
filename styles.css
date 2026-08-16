@@ -1067,6 +1067,36 @@ img {
     margin-top: 48px;
 }
 
+/* Gallery Loading */
+.gallery-loading {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 20px;
+}
+
+.gallery-loading p {
+    color: var(--text-dark-muted, #64748b);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(245, 158, 11, 0.2);
+    border-top-color: var(--primary, #f59e0b);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 /* =============================================
    LIGHTBOX
    ============================================= */
@@ -1309,8 +1339,10 @@ a.contact-item:hover {
     padding: 28px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Změněno z row na column pro centrování */
+    justify-content: center;
     align-items: center;
+    gap: 16px; /* Mezera mezi textem a sociálními sítěmi */
     position: relative;
     z-index: 1;
 }
