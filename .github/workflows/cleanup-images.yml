@@ -1,0 +1,37 @@
+name: Cleanup JPG Images
+
+on:
+  workflow_dispatch: # Umožní ruční spuštění přes GitHub UI tlačítkem "Run workflow"
+
+permissions:
+  contents: write # Důležité: dává oprávnění commitovat a pushovat změny do repozitáře
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Delete all JPGs except hero-bg.jpg
+        run: |
+          echo "Hledám a mažu JPG soubory..."
+          # Najde všechny .jpg a .jpeg soubory (i ve podsložkách) ignorující velikost písmen,
+          # vynechá přesně hero-bg.jpg a zbytek smaže
+          find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) ! -name "hero-bg.jpg" -delete
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Zkontrolujeme, jestli vůbec vznikly nějaké změny ke commitu
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: remove legacy JPG assets except hero-bg.jpg"
+            git push
+            echo "Smazané soubory byly commitnuty a pushnuty."
+          else
+            echo "Žádné JPG soubory ke smazání nebyly nalezeny."
+          fi
