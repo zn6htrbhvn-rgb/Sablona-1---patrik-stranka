@@ -85,11 +85,6 @@
     "thumb": "https://res.cloudinary.com/xtixzpri/image/upload/c_limit,w_1000/e_blur_faces:2000/f_auto,q_auto,w_400,c_fill/Stavba_plotu_ze_ztraceného_bednění"
   },
   {
-    "id": "Stavba_betonového_panelového_plotu_s_pomocníky_na_staveništi",
-    "url": "https://res.cloudinary.com/xtixzpri/image/upload/c_limit,w_1000/e_blur_faces:2000/f_auto,q_auto/Stavba_betonového_panelového_plotu_s_pomocníky_na_staveništi",
-    "thumb": "https://res.cloudinary.com/xtixzpri/image/upload/c_limit,w_1000/e_blur_faces:2000/f_auto,q_auto,w_400,c_fill/Stavba_betonového_panelového_plotu_s_pomocníky_na_staveništi"
-  },
-  {
     "id": "Rozestavěný_plot_ze_suchých_betonových_tvárnic_podél_silnice",
     "url": "https://res.cloudinary.com/xtixzpri/image/upload/c_limit,w_1000/e_blur_faces:2000/f_auto,q_auto/Rozestavěný_plot_ze_suchých_betonových_tvárnic_podél_silnice",
     "thumb": "https://res.cloudinary.com/xtixzpri/image/upload/c_limit,w_1000/e_blur_faces:2000/f_auto,q_auto,w_400,c_fill/Rozestavěný_plot_ze_suchých_betonových_tvárnic_podél_silnice"
@@ -486,8 +481,8 @@
   },
   {
     "id": "Vodoinstalace",
-    "url": "https://res.cloudinary.com/xtixzpri/image/upload/c_limit,w_1000/e_blur_faces:2000/f_auto,q_auto/Vodoinstalace",
-    "thumb": "https://res.cloudinary.com/xtixzpri/image/upload/c_limit,w_1000/e_blur_faces:2000/f_auto,q_auto,w_400,c_fill/Vodoinstalace"
+    "url": "https://res.cloudinary.com/xtixzpri/image/upload/f_auto,q_auto,w_1000/Vodoinstalace",
+    "thumb": "https://res.cloudinary.com/xtixzpri/image/upload/f_auto,q_auto,w_400,c_fill/Vodoinstalace"
   },
   {
     "id": "Výkop_rýhy",
