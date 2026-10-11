@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fotogalerie realizací - Multi Building. Prohlédněte si naše dokončené projekty: dlažby, ploty, zídky, schodiště a zemní práce.">
+    <meta name="description" content="Fotogalerie realizací - Multi Building. Prohlédněte si naše dokončené projekty: dlažby, ploty, zídky, schodiště, zemní a instalatérské práce.">
     <title>Fotogalerie | Multi Building</title>
     <meta name="theme-color" content="#151412">
     <!-- Favicon -->
@@ -68,6 +68,7 @@
                     <button class="filter-btn" data-filter="ploty">Ploty a brány</button>
                     <button class="filter-btn" data-filter="stavby">Zídky a schodiště</button>
                     <button class="filter-btn" data-filter="zemni">Zemní práce</button>
+                    <button class="filter-btn" data-filter="instalaterske">Instalatérské práce</button>
                 </div>
             </div>
             <div class="gallery-grid reveal revealed" id="gallery-grid">
@@ -235,13 +236,20 @@
             const name = id.toLowerCase();
             const cats = [];
 
+            // Instalatérské práce (vodoinstalace, potrubí, kanalizace, nádrže).
+            // Kanalizační šachta v dlažbě zůstává dlažbou, ne instalatérskou prací.
+            const instal = name.includes('vodoinstal') || name.includes('instalatér') || name.includes('instalater') ||
+                name.includes('potrub') || name.includes('nádrž') || name.includes('nadrz') ||
+                name.includes('přípojk') || name.includes('pripojk') ||
+                (name.includes('kanaliz') && !name.includes('šacht') && !name.includes('sacht'));
+
             // Dlažby a terasy
             if (name.includes('dlažb') || name.includes('dlazb') || name.includes('dláždě') || name.includes('dlážděn') ||
                 name.includes('chodník') || name.includes('chodnik') || name.includes('terasa') || name.includes('teras') ||
                 name.includes('vjezd') || name.includes('příjezdov') || name.includes('prijezdov') ||
                 name.includes('nádvoří') || name.includes('nadvor') || name.includes('dvůr') || name.includes('dvur') ||
                 name.includes('předzahrádka') || name.includes('predzahrad') ||
-                name.includes('pokládka') || name.includes('pokladka') || name.includes('velkoformátov') ||
+                ((name.includes('pokládka') || name.includes('pokladka')) && !instal) || name.includes('velkoformátov') ||
                 name.includes('zásyp_spár') || name.includes('zasypsp')) {
                 cats.push('dlazba');
             }
@@ -251,7 +259,7 @@
                 name.includes('sloupk') || name.includes('panelový') || name.includes('panelovy') ||
                 name.includes('ztracen') || name.includes('drátěn') || name.includes('draten') ||
                 name.includes('čtyřhrann') || name.includes('ctyrhrann') || name.includes('podhrabov') ||
-                name.includes('montáž') || name.includes('montaz') || name.includes('stavba_plotu') ||
+                ((name.includes('montáž') || name.includes('montaz')) && !instal) || name.includes('stavba_plotu') ||
                 name.includes('stavba_zdi') || name.includes('stavba_betonov') ||
                 name.includes('reliéf') || name.includes('relief') || name.includes('hladký') ||
                 name.includes('rozestavěn') || name.includes('rozestaven') ||
@@ -278,12 +286,22 @@
 
             // Zemní práce
             if (name.includes('výkop') || name.includes('vykop') ||
+                name.includes('zemní') || name.includes('zemni') ||
+                name.includes('hloubení') || name.includes('hloubeni') || name.includes('jáma') || name.includes('jámy') ||
+                name.includes('rýh') || name.includes('ryh') || name.includes('pažení') || name.includes('pazeni') ||
+                name.includes('terénní') || name.includes('terenni') ||
+                name.includes('úprava_povrchu') || name.includes('uprava_povrchu') ||
                 name.includes('základové_spáry') || name.includes('zakladove_spary') ||
                 name.includes('odvodňovac') || name.includes('odvodnova') ||
                 name.includes('kanalizač') || name.includes('kanalizac') ||
                 name.includes('šacht') || name.includes('sacht') ||
                 name.includes('žlab') || name.includes('zlab')) {
                 cats.push('zemni');
+            }
+
+            // Instalatérské práce
+            if (instal) {
+                cats.push('instalaterske');
             }
 
             // Pokud nebyla přiřazena žádná kategorie, přiřadíme "ostatni"
