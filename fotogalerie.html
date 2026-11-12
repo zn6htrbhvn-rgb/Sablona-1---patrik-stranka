@@ -15,34 +15,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Vlastní CSS -->
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link rel="stylesheet" href="styles.css?v=4.0">
 </head>
 <body>
     <!-- Hlavička s navigací -->
-    <header class="header scrolled" id="header">
+    <header class="header scrolled" id="header" data-solid>
         <div class="container header-inner">
             <div class="logo">
                 <a href="index.html#uvod"><img src="logo.svg" alt="Multi Building" width="268" height="48"></a>
             </div>
-            
-            <nav class="nav" id="nav">
+
+            <nav class="nav" id="nav" aria-label="Hlavní navigace">
                 <ul class="nav-list">
                     <li><a href="index.html#sluzby">Služby</a></li>
+                    <li><a href="index.html#postup">Jak pracujeme</a></li>
                     <li><a href="index.html#o-nas">O firmě</a></li>
-                    <li><a href="fotogalerie.html">Galerie</a></li>
+                    <li><a href="fotogalerie.html" aria-current="page">Galerie</a></li>
                     <li><a href="#kontakt">Kontakt</a></li>
                 </ul>
+                <a href="tel:+420703645592" class="phone-btn nav-phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +420 703 645 592
+                </a>
             </nav>
-            
+
             <div class="contact-quick">
                 <a href="tel:+420703645592" class="phone-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     +420 703 645 592
                 </a>
             </div>
-            
+
             <!-- Hamburger menu pro mobily -->
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -50,28 +55,34 @@
         </div>
     </header>
 
-    <!-- Gallery Page Hero -->
-    <div class="gallery-page-hero">
-        <h1>Naše <span>realizace</span></h1>
-        <p>Prohlédněte si fotografie z našich dokončených projektů po celé ČR.</p>
+    <main>
+    <!-- Hero podstránky -->
+    <div class="page-hero" id="uvod">
+        <div class="container">
+            <div>
+                <div class="eyebrow">Fotogalerie</div>
+                <h1>Naše <span class="accent">realizace</span></h1>
+                <p>Prohlédněte si fotografie z našich dokončených projektů po celé ČR.</p>
+            </div>
+            <div class="page-hero-count" id="photo-count" hidden>
+                <span class="number" id="photo-count-number"></span>
+                <span class="text">Fotografií z našich staveb</span>
+            </div>
+        </div>
     </div>
 
     <!-- Fotogalerie -->
-    <section id="galerie" class="section bg-light" style="padding-top: 80px;">
+    <section id="galerie" class="section bg-light section-gallery-page">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>Kompletní fotogalerie</h2>
-                <p>Vyberte si kategorii a prohlédněte si naše práce v detailu.</p>
-                <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">Vše</button>
-                    <button class="filter-btn" data-filter="dlazba">Dlažby a terasy</button>
-                    <button class="filter-btn" data-filter="ploty">Ploty a brány</button>
-                    <button class="filter-btn" data-filter="stavby">Zídky a schodiště</button>
-                    <button class="filter-btn" data-filter="zemni">Zemní práce</button>
-                    <button class="filter-btn" data-filter="instalaterske">Instalatérské práce</button>
-                </div>
+            <div class="gallery-filters" role="group" aria-label="Kategorie fotografií">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">Vše</button>
+                <button class="filter-btn" data-filter="dlazba" aria-pressed="false">Dlažby a terasy</button>
+                <button class="filter-btn" data-filter="ploty" aria-pressed="false">Ploty a brány</button>
+                <button class="filter-btn" data-filter="stavby" aria-pressed="false">Zídky a schodiště</button>
+                <button class="filter-btn" data-filter="zemni" aria-pressed="false">Zemní práce</button>
+                <button class="filter-btn" data-filter="instalaterske" aria-pressed="false">Instalatérské práce</button>
             </div>
-            <div class="gallery-grid reveal revealed" id="gallery-grid">
+            <div class="gallery-grid" id="gallery-grid">
                 <!-- Fotky se načtou dynamicky z photos.json -->
                 <div class="gallery-loading" id="gallery-loading">
                     <div class="spinner"></div>
@@ -81,35 +92,60 @@
         </div>
     </section>
 
-    <!-- Patička a Kontakt -->
-    <footer id="kontakt" class="footer">
+    <!-- Oranžový kontaktní pás -->
+    <section id="kontakt" class="cta-band">
+        <div class="container cta-inner">
+            <div class="reveal">
+                <div class="eyebrow">Nezávazná poptávka</div>
+                <h2>Máte zakázku? Zavolejte nám.</h2>
+                <p>Domluvíme si schůzku, zakázku zaměříme a nafotíme. Ocenění a smlouvu o dílo dostanete ještě týž den.</p>
+            </div>
+            <div class="cta-side reveal">
+                <a href="tel:+420703645592" class="cta-phone">+420 703 645 592</a>
+                <div class="cta-actions">
+                    <a href="tel:+420703645592" class="btn btn-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Zavolat
+                    </a>
+                    <a href="mailto:mb.multibuilding@gmail.com" class="btn btn-ink">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Napsat e-mail
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Patička -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                
+
                 <div class="footer-col brand-col">
                     <h2><img src="logo.svg" alt="Multi Building" width="320" height="57" loading="lazy"></h2>
                     <p>Váš spolehlivý partner pro stavební projekty. Od prvního výkopu až po předání klíčů.</p>
                 </div>
-                
+
                 <div class="footer-col contact-col">
                     <h3>Kontaktujte nás</h3>
                     <div class="contact-methods">
                         <a href="tel:+420703645592" class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             <span>
                                 <strong>Zavolejte nám</strong>
                                 +420 703 645 592
                             </span>
                         </a>
                         <a href="mailto:mb.multibuilding@gmail.com" class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             <span>
                                 <strong>Napište e-mail</strong>
                                 mb.multibuilding@gmail.com
                             </span>
                         </a>
                         <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                             <span>
                                 <strong>Oblast působení</strong>
                                 Celá Česká republika
@@ -117,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="footer-col info-col">
                     <h3>Fakturační údaje</h3>
                     <ul class="company-details">
@@ -125,102 +161,44 @@
                         <li>IČO: 22441182</li>
                     </ul>
                 </div>
-                
+
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2026 Multi Building. Všechna práva vyhrazena.</p>
                 <div class="socials">
-                    <a href="https://www.facebook.com/people/MB-MultiBuilding/61593268110803/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    <a href="https://www.instagram.com/mbmultibuilding/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="https://www.facebook.com/people/MB-MultiBuilding/61593268110803/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="https://www.instagram.com/mbmultibuilding/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Prohlížeč fotografií">
+        <div class="lightbox-counter" id="lightbox-counter" aria-live="polite"></div>
         <button class="lightbox-close" id="lightbox-close" aria-label="Zavřít">&times;</button>
         <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Předchozí">&#8249;</button>
         <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Další">&#8250;</button>
-        <img src="" alt="" id="lightbox-img">
+        <img alt="" id="lightbox-img">
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
-    <!-- Scroll to Top -->
+    <!-- Nahoru -->
     <button class="scroll-top" id="scroll-top" aria-label="Nahoru">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
 
-    <!-- JavaScript -->
+    <!-- Pevná lišta „Zavolat" na mobilu -->
+    <a href="tel:+420703645592" class="call-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Zavolat +420 703 645 592
+    </a>
+
+    <script src="site.js?v=4.0"></script>
     <script>
         // ===========================================
-        // MOBILE MENU
-        // ===========================================
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const nav = document.getElementById('nav');
-        const header = document.getElementById('header');
-
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuBtn.classList.remove('active');
-                nav.classList.remove('active');
-            });
-        });
-
-        // ===========================================
-        // HEADER SCROLL (keep scrolled class on gallery page)
-        // ===========================================
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            }
-            // Don't remove scrolled on gallery page — header is always dark
-        });
-
-        // ===========================================
-        // SCROLL-TO-TOP BUTTON
-        // ===========================================
-        const scrollTopBtn = document.getElementById('scroll-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 600) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ===========================================
-        // SCROLL REVEAL ANIMATIONS
-        // ===========================================
-        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger');
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // ===========================================
-        // LOAD PHOTOS FROM CLOUDINARY (photos.json)
+        // NAČTENÍ FOTEK Z CLOUDINARY (photos.json)
         // ===========================================
         const galleryGrid = document.getElementById('gallery-grid');
         const galleryLoading = document.getElementById('gallery-loading');
@@ -315,51 +293,75 @@
             .then(photos => {
                 galleryLoading.remove();
 
-                photos.forEach((photo, index) => {
+                photos.forEach(photo => {
                     const categories = getCategories(photo.id);
                     const label = idToLabel(photo.id);
 
-                    const item = document.createElement('div');
+                    const item = document.createElement('button');
+                    item.type = 'button';
                     item.className = 'gallery-item ' + categories.join(' ');
                     item.setAttribute('data-url', photo.url);
-                    item.setAttribute('data-thumb', photo.thumb);
-                    item.onclick = function() { openLightbox(this); };
-                    item.style.animationDelay = (index % 20) * 0.03 + 's';
 
-                    item.innerHTML = `
-                        <img src="${photo.thumb}" alt="${label}" loading="lazy">
-                        <div class="gallery-overlay"><span>${label}</span></div>
-                    `;
+                    const img = document.createElement('img');
+                    img.src = photo.thumb;
+                    img.alt = label;
+                    img.loading = 'lazy';
 
+                    const overlay = document.createElement('span');
+                    overlay.className = 'gallery-overlay';
+                    const caption = document.createElement('span');
+                    caption.textContent = label;
+                    overlay.appendChild(caption);
+
+                    item.append(img, overlay);
                     galleryGrid.appendChild(item);
                 });
 
-                // Inicializace filtrů po načtení fotek
+                // Počet fotek v hlavičce stránky
+                document.getElementById('photo-count-number').textContent = photos.length;
+                document.getElementById('photo-count').hidden = false;
+
                 initFilters();
             })
             .catch(err => {
-                galleryLoading.innerHTML = '<p style="color: #e74c3c;">Nepodařilo se načíst fotogalerii.</p>';
+                galleryLoading.innerHTML = '<p class="gallery-error">Nepodařilo se načíst fotogalerii. Zkuste stránku načíst znovu.</p>';
                 console.error('Chyba při načítání photos.json:', err);
             });
 
         // ===========================================
-        // GALLERY FILTER
+        // FILTR GALERIE
         // ===========================================
         function initFilters() {
             const filterBtns = document.querySelectorAll('.filter-btn');
             const galleryItems = document.querySelectorAll('.gallery-item');
 
+            // Počty fotek u jednotlivých kategorií
+            filterBtns.forEach(btn => {
+                const value = btn.getAttribute('data-filter');
+                const count = value === 'all'
+                    ? galleryItems.length
+                    : galleryGrid.querySelectorAll('.gallery-item.' + value).length;
+                const badge = document.createElement('span');
+                badge.className = 'count';
+                badge.textContent = count;
+                btn.appendChild(badge);
+            });
+
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
                     btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
 
                     const filterValue = btn.getAttribute('data-filter');
 
                     galleryItems.forEach(item => {
                         if (filterValue === 'all' || item.classList.contains(filterValue)) {
                             item.classList.remove('hide');
-                            item.style.animation = 'fadeInUp 0.5s ease forwards';
+                            item.style.animation = 'fadeInUp 0.5s ease both';
                         } else {
                             item.classList.add('hide');
                         }
@@ -367,84 +369,6 @@
                 });
             });
         }
-
-        // ===========================================
-        // LIGHTBOX
-        // ===========================================
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const lightboxClose = document.getElementById('lightbox-close');
-        const lightboxPrev = document.getElementById('lightbox-prev');
-        const lightboxNext = document.getElementById('lightbox-next');
-        
-        let currentLightboxIndex = 0;
-        let lightboxImages = [];
-
-        function openLightbox(element) {
-            const allItems = document.querySelectorAll('.gallery-item:not(.hide)');
-            lightboxImages = [];
-            allItems.forEach((item, i) => {
-                const fullUrl = item.getAttribute('data-url');
-                const img = item.querySelector('img');
-                if (img) {
-                    lightboxImages.push({
-                        src: fullUrl || img.src,
-                        alt: img.alt
-                    });
-                    if (item === element) {
-                        currentLightboxIndex = i;
-                    }
-                }
-            });
-            
-            showLightboxImage();
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function showLightboxImage() {
-            if (lightboxImages[currentLightboxIndex]) {
-                lightboxImg.src = lightboxImages[currentLightboxIndex].src;
-                lightboxImg.alt = lightboxImages[currentLightboxIndex].alt;
-                lightboxCaption.textContent = lightboxImages[currentLightboxIndex].alt;
-            }
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-
-        lightboxPrev.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-            showLightboxImage();
-        });
-
-        lightboxNext.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
-            showLightboxImage();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') {
-                currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-                showLightboxImage();
-            }
-            if (e.key === 'ArrowRight') {
-                currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
-                showLightboxImage();
-            }
-        });
     </script>
 </body>
 </html>
